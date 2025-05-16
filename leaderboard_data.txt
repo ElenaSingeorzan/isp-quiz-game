@@ -1,6 +1,6 @@
 dan:1
 dda:0
-elena:7
+elena:10
 mihai:2
 ana:4
 dani:3
