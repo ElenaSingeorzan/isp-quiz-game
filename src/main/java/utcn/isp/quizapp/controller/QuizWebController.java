@@ -27,7 +27,6 @@ import java.io.IOException; // Added import
 
 @Controller
 public class QuizWebController {
-    /// xyz
     private final QuizSessionService quizSessionService;
     private final Leaderboard leaderboard;
     private final ActiveSessionsService activeSessionsService;
@@ -92,7 +91,7 @@ public class QuizWebController {
 
     @PostMapping("/submitAnswer")
     public String submitAnswer(@RequestParam("answer") int selectedOptionIndex,
-                               Model model) {
+                               Model mod) {
         if (!quizSessionService.isGameActive() || quizSessionService.isTimeUp()) {
             return "redirect:/gameOver";
         }
@@ -126,7 +125,7 @@ public class QuizWebController {
         model.addAttribute("leaderboard", leaderboard.getAllScoresSorted());
         
         quizSessionService.endGame();
-        return "gameOver";
+        return "gataJocul";
     }
 
     @GetMapping("/dashboard-login")
@@ -197,7 +196,6 @@ public class QuizWebController {
                 outputStream.write(buffer, 0, bytesRead);
             }
         } catch (IOException e) {
-            // Log error, maybe send a different error response
             System.err.println("Error writing leaderboard file to output stream: " + e.getMessage());
             if (!response.isCommitted()) {
                  response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Error occurred while downloading the file.");
