@@ -125,7 +125,7 @@ public class QuizWebController {
         model.addAttribute("leaderboard", leaderboard.getAllScoresSorted());
         
         quizSessionService.endGame();
-        return "GameOver";
+        return "gameOver";
     }
 
     @GetMapping("/dashboard-login")

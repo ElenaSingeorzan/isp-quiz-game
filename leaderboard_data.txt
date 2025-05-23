@@ -4,5 +4,6 @@ elena:10
 mihai:2
 ana:4
 dani:3
+maria:9
 aline:2
 demo:3
